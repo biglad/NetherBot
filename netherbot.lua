@@ -5,7 +5,7 @@ frame:SetPoint("CENTER", UIParent, "CENTER")
 
 local title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 title:SetPoint("TOP", frame, "TOP", 0, -10)
-title:SetText("MGABots Tool")
+title:SetText("MGAWoW Player Bots Helper")
 
 -- Set the background color and transparency for MainFrame "Frame"
 frame:SetBackdrop({
