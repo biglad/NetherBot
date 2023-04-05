@@ -5,7 +5,7 @@ frame:SetPoint("CENTER", UIParent, "CENTER")
 
 local title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 title:SetPoint("TOP", frame, "TOP", 0, -10)
-title:SetText("MGABots Tool")
+title:SetText("MGAWoW Player Bots Helper")
 
 -- Set the background color and transparency for MainFrame "Frame"
 frame:SetBackdrop({
@@ -157,7 +157,7 @@ adminButton:SetSize(60, 20)
 adminButton:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 10) -- position the button in the bottom right of the frame
 adminButton:SetText("Admin")
 adminButton:GetNormalTexture():SetVertexColor(0.10,1.00,0.10)
-
+--]] 
 -- Create Admin Buttons
 local buttonAdd = CreateFrame("Button", "NetherbotButtonAdd", adminFrame, "UIPanelButtonTemplate")
 buttonAdd:SetSize(56, 22)
@@ -198,7 +198,6 @@ buttonDelete:GetNormalTexture():SetVertexColor(0.10,1.00,0.10)
 local redemptionButton = CreateFrame("Button", "NetherbotRedemptionButton", adminFrame, "SecureActionButtonTemplate")
 redemptionButton:SetSize(30, 30)
 redemptionButton:SetPoint("BOTTOMLEFT", adminFrame, "BOTTOMLEFT", 10, 10)
---]]
 
 local redemptionIcon = redemptionButton:CreateTexture(nil, "BACKGROUND")
 redemptionIcon:SetAllPoints()
