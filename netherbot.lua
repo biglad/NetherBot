@@ -151,7 +151,7 @@ distance3Button:SetPushedTexture(distance3pushedTexture)
 
 
 
-
+--[[
 local adminButton = CreateFrame("Button", "NetherbotAdminButton", frame, "UIPanelButtonTemplate")
 adminButton:SetSize(60, 20)
 adminButton:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 10) -- position the button in the bottom right of the frame
@@ -198,6 +198,7 @@ buttonDelete:GetNormalTexture():SetVertexColor(0.10,1.00,0.10)
 local redemptionButton = CreateFrame("Button", "NetherbotRedemptionButton", adminFrame, "SecureActionButtonTemplate")
 redemptionButton:SetSize(30, 30)
 redemptionButton:SetPoint("BOTTOMLEFT", adminFrame, "BOTTOMLEFT", 10, 10)
+--]]
 
 local redemptionIcon = redemptionButton:CreateTexture(nil, "BACKGROUND")
 redemptionIcon:SetAllPoints()
