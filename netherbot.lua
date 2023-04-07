@@ -151,13 +151,31 @@ distance3Button:SetPushedTexture(distance3pushedTexture)
 
 
 
---[[
+
+
+
+
 local adminButton = CreateFrame("Button", "NetherbotAdminButton", frame, "UIPanelButtonTemplate")
-adminButton:SetSize(60, 20)
+adminButton:SetSize(0, 0)
 adminButton:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 10) -- position the button in the bottom right of the frame
 adminButton:SetText("Admin")
 adminButton:GetNormalTexture():SetVertexColor(0.10,1.00,0.10)
---]] 
+
+
+
+local redemptionButton = CreateFrame("Button", "NetherbotRedemptionButton", frame, "SecureActionButtonTemplate")
+redemptionButton:SetSize(30, 30)
+redemptionButton:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 10, 10)
+
+local redemptionIcon = redemptionButton:CreateTexture(nil, "BACKGROUND")
+redemptionIcon:SetAllPoints()
+redemptionIcon:SetTexture(select(3, GetSpellInfo(7328)))
+
+redemptionButton:SetNormalTexture(redemptionIcon)
+
+redemptionButton:SetAttribute("type", "spell")
+redemptionButton:SetAttribute("spell", 7328)
+
 -- Create Admin Buttons
 local buttonAdd = CreateFrame("Button", "NetherbotButtonAdd", adminFrame, "UIPanelButtonTemplate")
 buttonAdd:SetSize(56, 22)
@@ -195,18 +213,7 @@ buttonDelete:SetPoint("BOTTOMRIGHT", adminFrame, "BOTTOMRIGHT", -10, 10)
 buttonDelete:SetText("Delete")
 buttonDelete:GetNormalTexture():SetVertexColor(0.10,1.00,0.10)
 
-local redemptionButton = CreateFrame("Button", "NetherbotRedemptionButton", adminFrame, "SecureActionButtonTemplate")
-redemptionButton:SetSize(30, 30)
-redemptionButton:SetPoint("BOTTOMLEFT", adminFrame, "BOTTOMLEFT", 10, 10)
 
-local redemptionIcon = redemptionButton:CreateTexture(nil, "BACKGROUND")
-redemptionIcon:SetAllPoints()
-redemptionIcon:SetTexture(select(3, GetSpellInfo(7328)))
-
-redemptionButton:SetNormalTexture(redemptionIcon)
-
-redemptionButton:SetAttribute("type", "spell")
-redemptionButton:SetAttribute("spell", 7328)
 
 -- Create the "botLookupButton" button
 local botLookupButton = CreateFrame("Button", "NetherbotBotLookupButton", adminFrame, "UIPanelButtonTemplate")
@@ -357,8 +364,10 @@ buttonAdd:SetScript("OnClick", function()
 
   
   redemptionButton:SetScript("OnClick", function()
-    ChatFrame1:AddMessage(".npcbot revive")
+    --ChatFrame1:AddMessage(".npcbot revive")
     SendChatMessage(".npcbot revive", "SAY")
+	--ChatFrame1:AddMessage("Revive")
+	--SendChatMessage("Revive", "SAY")
 end)
 
   redemptionButton:SetScript("OnEnter", function(self)
